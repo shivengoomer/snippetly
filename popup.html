@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snippetly</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Snippetly</h1>
+
+  <div>
+    <h2>Clipboard History (Text & Images)</h2>
+    <input type="text" id="searchClipboard" placeholder="Search clipboard..." />
+    <ul id="clipboardHistory"></ul>
+  </div>
+
+  <div>
+    <h2>Save Code Snippet</h2>
+    <textarea id="codeSnippet" placeholder="Enter your code snippet here..."></textarea>
+    <button id="saveSnippetButton">Save Snippet</button>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

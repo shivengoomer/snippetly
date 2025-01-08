@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Snippetly",
+  "version": "1.0",
+  "description": "Clipboard Manager for Text & Images, Code Snippets, and Webpage Overview",
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "48": "icon.png"
+  }
+}
