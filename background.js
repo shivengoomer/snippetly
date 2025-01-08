@@ -1,4 +1,4 @@
+
 chrome.runtime.onInstalled.addListener(() => {
-    console.log("Snippetly installed!");
-  });
-  
+  console.log("Snippetly installed.");
+});

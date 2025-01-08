@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snippetly</title>
-  <link rel="stylesheet" href="popup.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Snippetly</title>
 </head>
 <body>
-  <h1>Snippetly</h1>
+    <h1>Snippetly</h1>
+    <textarea id="snippetInput" placeholder="Type or paste your snippet here..."></textarea>
+    <button id="saveSnippet">Save Snippet</button>
+    <h2>Saved Snippets</h2>
+    <ul id="snippetList"></ul>
 
-  <div>
-    <h2>Clipboard History (Text & Images)</h2>
-    <input type="text" id="searchClipboard" placeholder="Search clipboard..." />
-    <ul id="clipboardHistory"></ul>
-  </div>
+    <!-- Drop zone for images -->
+    <div id="dropZone">
+        Drag and drop an image here or click to upload.
+    </div>
 
-  <div>
-    <h2>Save Code Snippet</h2>
-    <textarea id="codeSnippet" placeholder="Enter your code snippet here..."></textarea>
-    <button id="saveSnippetButton">Save Snippet</button>
-  </div>
+    <!-- Popup for image drag and drop -->
+    <div id="popupZone" class="popup">
+        <div class="popup-content">
+            <h3>Drag image here</h3>
+            <div id="popupDropZone">Drop image here</div>
+            <button id="closePopupButton">Close</button>
+        </div>
+    </div>
 
-  <script type="module" src="popup.js"></script>
+    <!-- Button to capture screen snip -->
+    <button id="captureScreenButton">Capture Screen Snip</button>
+
+    <script src="popup.js"></script>
 </body>
 </html>
