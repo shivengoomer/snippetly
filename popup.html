@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Snippetly</title>
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h1>Snippetly</h1>
-    <textarea id="snippetInput" placeholder="Type or paste your snippet here..."></textarea>
-    <button id="saveSnippet">Save Snippet</button>
-    <h2>Saved Snippets</h2>
-    <ul id="snippetList"></ul>
-
-    <!-- Drop zone for images -->
-    <div id="dropZone">
-        Drag and drop an image here or click to upload.
-    </div>
-
-    <!-- Popup for image drag and drop -->
-    <div id="popupZone" class="popup">
-        <div class="popup-content">
-            <h3>Drag image here</h3>
-            <div id="popupDropZone">Drop image here</div>
-            <button id="closePopupButton">Close</button>
+    <div id="main-page">
+        <h1>Snippetly</h1>
+        
+        <!-- Tab buttons (all on the same row) -->
+        <div id="tab-buttons">
+            <button id="copy-tab">Save Current Tab</button>
+            <button id="view-snippets">View Saved Tabs</button>
         </div>
+        
+        <!-- Clipboard History button on a new row -->
+        <div id="clipboard-button">
+            <button id="view-clipboard">Clipboard History</button>
+        </div>
+        
+        <p id="status"></p>
     </div>
 
-    <!-- Button to capture screen snip -->
-    <button id="captureScreenButton">Capture Screen Snip</button>
+    <div id="snippets-page" style="display: none;">
+        <h1>Saved Snippets</h1>
+        <div id="snippets-list"></div>
+        <button id="back-button"> ← </button>
+    </div>
+
+    <div id="clipboard-page" style="display: none;">
+        <h1>Clipboard History</h1>
+        <div id="clipboard-actions">
+            <input type="text" id="clipboard-input" placeholder="Enter text to save">
+            <button id="save-clipboard">Save</button>
+        </div>
+        <div id="clipboard-list"></div>
+        <button id="clipboard-back-button">←</button>
+        <button id="clear-all-clipboard">Clear All</button>
+    </div>
+    <
+
 
     <script src="popup.js"></script>
 </body>

@@ -1,4 +1,5 @@
-
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("Snippetly installed.");
-});
+    chrome.storage.local.set({ snippets: [] });
+    console.log('Snippetly installed and initialized!');
+  });
+  
