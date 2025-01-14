@@ -76,5 +76,5 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 
 ## Contact Info
 
-E-Mail - **[shivengoomer@gmail.com](mailto:shivengoomer@gmail.com)**
-LinkedIn- **[https://www.linkedin.com/in/shiven-goomer/](https://www.linkedin.com/in/shiven-goomer/)
+E-Mail - **[shivengoomer@gmail.com](mailto:shivengoomer@gmail.com)** .
+LinkedIn- **[https://www.linkedin.com/in/shiven-goomer/](https://www.linkedin.com/in/shiven-goomer/)**
