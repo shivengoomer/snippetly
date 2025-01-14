@@ -94,6 +94,7 @@ button:hover {
   color: white;
   cursor: pointer;
   position: fixed;
+  margin: 0px;
   top: 20px;
   left: 20px;
   z-index: 100;
@@ -222,11 +223,4 @@ button:hover {
 
 #clipboard-button button:hover {
   background-color: #1976D2;
-}
-.date-time {
-  font-size: 0.9em;
-  color: #888;
-  position: absolute;
-  top: 5px;
-  right: 10px;
 }

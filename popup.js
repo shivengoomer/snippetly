@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tabs.length > 0) {
                 const currentTab = tabs[0];
                 const defaultTitle = currentTab.title;
-                const currentDateTime = new Date().toLocaleString(); // Current date and time
+               
 
                 const customTitle = prompt('Enter a title for this snippet:', defaultTitle);
 
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         title: customTitle || defaultTitle,
                         url: currentTab.url,
                         type: 'link',
-                        dateAdded: currentDateTime
                     };
 
                     chrome.storage.local.get({ snippets: [] }, (data) => {
@@ -70,10 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     url.textContent = snippet.url;
                     url.target = '_blank';
 
-                    const dateTime = document.createElement('span');
-                    dateTime.textContent = snippet.dateAdded;
-                    dateTime.classList.add('date-time');
-
                     const copyButton = document.createElement('button');
                     copyButton.textContent = 'Copy URL';
                     copyButton.addEventListener('click', () => {
@@ -96,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     snippetItem.appendChild(title);
                     snippetItem.appendChild(url);
-                    snippetItem.appendChild(dateTime);
                     snippetItem.appendChild(copyButton);
                     snippetItem.appendChild(deleteButton);
                     snippetsList.appendChild(snippetItem);
@@ -134,9 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const content = document.createElement('p');
                     content.textContent = `${index + 1}. ${item.content}`;
 
-                    const dateTime = document.createElement('span');
-                    dateTime.textContent = item.dateAdded;
-                    dateTime.classList.add('date-time');
 
                     const copyButton = document.createElement('button');
                     copyButton.textContent = 'Copy';
@@ -159,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
 
                     clipboardItem.appendChild(content);
-                    clipboardItem.appendChild(dateTime); // Add the date and time here
                     clipboardItem.appendChild(copyButton);
                     clipboardItem.appendChild(deleteButton);
                     clipboardList.appendChild(clipboardItem);
@@ -182,10 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const clipboardContent = clipboardInput.value.trim();
 
         if (clipboardContent) {
-            const currentDateTime = new Date().toLocaleString(); // Current date and time
             const clipboardItem = {
                 content: clipboardContent,
-                dateAdded: currentDateTime
             };
 
             chrome.storage.local.get({ clipboard: [] }, (data) => {
@@ -202,10 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const content = document.createElement('p');
                     content.textContent = clipboardItem.content;
-
-                    const dateTime = document.createElement('span');
-                    dateTime.textContent = clipboardItem.dateAdded;
-                    dateTime.classList.add('date-time');
 
                     const copyButton = document.createElement('button');
                     copyButton.textContent = 'Copy';
@@ -245,9 +229,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
             });
-        } else {
+        }else {
             status.textContent = 'Please enter some text!';
             setTimeout(() => (status.textContent = ''), 3000);
         }
+    });
+
+    // Clear all clipboard history
+    clearAllClipboardButton.addEventListener('click', () => {
+        // Clear clipboard storage
+        chrome.storage.local.set({ clipboard: [] }, () => {
+            // Update UI
+            clipboardList.innerHTML = '';
+            status.textContent = 'All clipboard history cleared!';
+            setTimeout(() => (status.textContent = ''), 3000);
+        });
     });
 });
