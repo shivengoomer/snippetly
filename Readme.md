@@ -73,3 +73,8 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 2. Create a new branch for your feature or bug fix.
 3. Make your changes and commit them.
 4. Push to your branch and open a pull request.
+
+## Contact Info
+
+E-Mail - **[shivengoomer@gmail.com](mailto:shivengoomer@gmail.com)**
+LinkedIn- **[https://www.linkedin.com/in/shiven-goomer/](https://www.linkedin.com/in/shiven-goomer/)
